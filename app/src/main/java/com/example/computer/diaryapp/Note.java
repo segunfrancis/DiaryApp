@@ -37,7 +37,7 @@ public class Note {
         return this.id;
     }
 
-    public String geNote() {
+    public String getNote() {
         return mNote;
     }
 
