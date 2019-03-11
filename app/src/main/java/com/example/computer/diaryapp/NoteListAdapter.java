@@ -1,11 +1,10 @@
+package com.example.computer.diaryapp;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.example.computer.diaryapp.Note;
-import com.example.computer.diaryapp.R;
 
 import java.util.List;
 
