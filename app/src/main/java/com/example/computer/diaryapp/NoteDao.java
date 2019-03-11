@@ -2,6 +2,7 @@ package com.example.computer.diaryapp;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -12,12 +13,12 @@ public interface NoteDao {
     @Insert
     void insert(Note note);
 
-    @Query("DELETE FROM note_table WHERE id = :note_id")
+    @Query("DELETE from note_table WHERE id = :note_id")
     void deleteNote(long note_id);
 
-    @Query("DELETE FROM note_table")
+    @Query("DELETE from note_table")
     void deleteAllNotes();
 
     @Query("SELECT * from note_table ORDER BY time DESC")
-    List<Note> getAllNotes();
+    LiveData<List<Note>> getAllNotes();
 }

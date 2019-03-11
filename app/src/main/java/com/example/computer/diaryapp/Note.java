@@ -37,19 +37,19 @@ public class Note {
         return this.id;
     }
 
-    public String getWord() {
-        return this.mNote;
+    public String geNote() {
+        return mNote;
     }
 
     public String getCategory() {
-        return this.mCategory;
+        return mCategory;
     }
 
-    public String getmDate() {
+    public String getDate() {
         return mDate;
     }
 
-    public String getmTime() {
+    public String getTime() {
         return mTime;
     }
 }
