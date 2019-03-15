@@ -69,6 +69,7 @@ public class NoteRepository {
          */
         @Override
         protected Void doInBackground(final Note... notes) {
+//            for (int x = 0; x <= notes.length; x++)
             mAsyncTaskDao.insert(notes[0]);
             return null;
         }

@@ -26,15 +26,18 @@
                 android:id="@+id/note_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
                 android:paddingStart="@dimen/text_padding"
                 android:paddingTop="@dimen/text_padding"
                 android:paddingBottom="@dimen/text_padding"
-                tools:text="Fusce vulputate eleifend sapien. Phasellus nec sem in justo pellentesque facilisis." />
+                android:maxLines="2"
+                tools:text="Fusce vulputate eleifend sapien. Phasellus nec sem in justo pellentesque facilisis. " />
 
             <TextView
                 android:id="@+id/category_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
                 android:paddingStart="@dimen/text_padding"
                 android:paddingTop="@dimen/text_padding"
                 android:paddingBottom="@dimen/text_padding"
@@ -51,6 +54,7 @@
                 android:id="@+id/time_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
                 android:gravity="end"
                 android:padding="@dimen/text_padding"
                 tools:text="11:49 am" />
@@ -59,6 +63,7 @@
                 android:id="@+id/date_textview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fontFamily="sans-serif-condensed-light"
                 android:gravity="bottom|end"
                 android:padding="@dimen/text_padding"
                 tools:text="26th April 2019" />

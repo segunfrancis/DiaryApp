@@ -1,36 +1,33 @@
 package com.example.computer.diaryapp;
 
-import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-
 
 @Entity(tableName = "note_table")
 public class Note {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-
-    @NonNull
-    @ColumnInfo(name = "note")
     private String mNote;
-
-    @ColumnInfo(name = "category")
     private String mCategory;
-
-    @ColumnInfo(name = "date")
     private String mDate;
-
-    @ColumnInfo(name = "time")
     private String mTime;
 
-    public Note(int id, @NonNull String note, String category, String date, String time) {
+    public Note(int id, String note, String category, String date, String time) {
         this.id = id;
         this.mNote = note;
         this.mCategory = category;
         this.mDate = date;
         this.mTime = time;
+    }
+
+    @Ignore
+    public Note(String mNote, String mCategory, String mDate, String mTime) {
+        this.mNote = mNote;
+        this.mCategory = mCategory;
+        this.mDate = mDate;
+        this.mTime = mTime;
     }
 
     public int getId() {
