@@ -5,8 +5,11 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
 
 @Database(entities = {Note.class}, version = 1)
+@TypeConverters(DateConverter.class)
 public abstract class NoteRoomDatabase extends RoomDatabase {
     public abstract NoteDao noteDao();
 
