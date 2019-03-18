@@ -40,13 +40,13 @@ public class NewNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent replyIntent = new Intent();
-                if (TextUtils.isEmpty(mEditNoteView.getText())) {
+                if (TextUtils.isEmpty(mEditNoteView.getText().toString().trim())) {
                     setResult(RESULT_CANCELED, replyIntent);
                 } else {
-                    String note = mEditNoteView.getText().toString();
+                    String note = mEditNoteView.getText().toString().trim();
                     String category = mSpinnerCategory.getSelectedItem().toString();
                     String date = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
-                    String time = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
+                    String time = new SimpleDateFormat("h:mm a").format(Calendar.getInstance().getTime());
 
                     replyIntent.putExtra(NOTE, note);
                     replyIntent.putExtra(CATEGORY, category);

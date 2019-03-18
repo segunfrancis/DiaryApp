@@ -9,7 +9,6 @@ import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 
 @Database(entities = {Note.class}, version = 1)
-@TypeConverters(DateConverter.class)
 public abstract class NoteRoomDatabase extends RoomDatabase {
     public abstract NoteDao noteDao();
 

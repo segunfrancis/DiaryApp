@@ -57,6 +57,7 @@
                 android:fontFamily="sans-serif-condensed-light"
                 android:gravity="end"
                 android:padding="@dimen/text_padding"
+                android:textColor="@android:color/holo_blue_dark"
                 tools:text="11:49 am" />
 
             <TextView
@@ -66,6 +67,7 @@
                 android:fontFamily="sans-serif-condensed-light"
                 android:gravity="bottom|end"
                 android:padding="@dimen/text_padding"
+                android:textColor="@android:color/holo_green_dark"
                 tools:text="26th April 2019" />
         </LinearLayout>
     </LinearLayout>

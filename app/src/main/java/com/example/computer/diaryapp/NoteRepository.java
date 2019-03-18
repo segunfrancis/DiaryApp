@@ -26,23 +26,28 @@ public class NoteRepository {
         new deleteAsyncTask(mNoteDao).execute(note_id);
     }
 
+    public void insert(Note note) {
+        new insertAsyncTask(mNoteDao).execute(note);
+    }
+
+    public void deleteAllNotes() {
+        new deletaAllNotesAsyncTask(mNoteDao).execute();
+    }
+
     private static class deleteAsyncTask extends AsyncTask<Long, Void, Void> {
+
 
         private NoteDao mAsyncTaskDao;
 
         deleteAsyncTask(NoteDao dao) {
             mAsyncTaskDao = dao;
         }
-
         @Override
         protected Void doInBackground(Long... longs) {
             mAsyncTaskDao.deleteNote(longs[0]);
             return null;
         }
-    }
 
-    public void insert(Note note) {
-        new insertAsyncTask(mNoteDao).execute(note);
     }
 
     private static class insertAsyncTask extends AsyncTask<Note, Void, Void> {
@@ -53,24 +58,23 @@ public class NoteRepository {
             mAsyncTaskDao = dao;
         }
 
-        /**
-         * Override this method to perform a computation on a background thread. The
-         * specified parameters are the parameters passed to {@link #execute}
-         * by the caller of this task.
-         * <p>
-         * This method can call {@link #publishProgress} to publish updates
-         * on the UI thread.
-         *
-         * @param notes The parameters of the task.
-         * @return A result, defined by the subclass of this task.
-         * @see #onPreExecute()
-         * @see #onPostExecute
-         * @see #publishProgress
-         */
         @Override
         protected Void doInBackground(final Note... notes) {
-//            for (int x = 0; x <= notes.length; x++)
             mAsyncTaskDao.insert(notes[0]);
+            return null;
+        }
+    }
+
+    private static class deletaAllNotesAsyncTask extends AsyncTask<Void, Void, Void> {
+        private NoteDao mAsyncTaskDao;
+
+        public deletaAllNotesAsyncTask(NoteDao dao) {
+            mAsyncTaskDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            mAsyncTaskDao.deleteAllNotes();
             return null;
         }
     }
