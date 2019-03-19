@@ -26,8 +26,8 @@ public class NoteViewModel extends AndroidViewModel {
         mRepository.insert(note);
     }
 
-    public void deleteNote(long note_id) {
-        mRepository.deleteNote(note_id);
+    public void deleteNote(Note note) {
+        mRepository.deleteNote(note);
     }
 
     public void deleteAllNotes() {

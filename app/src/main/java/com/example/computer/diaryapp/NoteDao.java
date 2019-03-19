@@ -4,6 +4,7 @@ import java.util.List;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -20,8 +21,8 @@ public interface NoteDao {
     @Query("SELECT * from note_table ORDER BY id DESC")
     LiveData<List<Note>> getAllNotes();
 
-    @Query("DELETE from note_table WHERE id = :note_id")
-    void deleteNote(long note_id);
+    @Delete
+    void deleteNote(Note note);
 
     @Query("DELETE from note_table")
     void deleteAllNotes();
