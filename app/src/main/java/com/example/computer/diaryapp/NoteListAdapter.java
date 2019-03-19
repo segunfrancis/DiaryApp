@@ -65,4 +65,8 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
             time = itemView.findViewById(R.id.time_textview);
         }
     }
+
+    public Note getNoteAtPosition (int position) {
+        return mNotes.get(position);
+    }
 }
