@@ -35,6 +35,10 @@ public class NewNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_note);
 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+        }
+
         mEditNoteView = findViewById(R.id.edit_note);
         mSpinnerCategory = findViewById(R.id.spinner);
         int id = -1;
