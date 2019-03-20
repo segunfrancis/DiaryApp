@@ -15,6 +15,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
 
     private final LayoutInflater mInflater;
     private List<Note> mNotes; // Cached copy of notes
+    private static ClickListener clickListener;
 
     public NoteListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -63,10 +64,25 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
             category = itemView.findViewById(R.id.category_textview);
             date = itemView.findViewById(R.id.date_textview);
             time = itemView.findViewById(R.id.time_textview);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickListener.onItemClick(v, getAdapterPosition());
+                }
+            });
         }
     }
 
-    public Note getNoteAtPosition (int position) {
+    public void setOnItemClickListener(ClickListener clickListener) {
+        NoteListAdapter.clickListener = clickListener;
+    }
+
+
+    public Note getNoteAtPosition(int position) {
         return mNotes.get(position);
+    }
+
+    public interface ClickListener {
+        void onItemClick(View v, int position);
     }
 }
