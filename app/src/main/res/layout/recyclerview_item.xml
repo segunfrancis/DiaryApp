@@ -31,6 +31,7 @@
                 android:paddingTop="@dimen/text_padding"
                 android:paddingBottom="@dimen/text_padding"
                 android:maxLines="2"
+                android:ellipsize="end"
                 tools:text="Fusce vulputate eleifend sapien. Phasellus nec sem in justo pellentesque facilisis. " />
 
             <TextView
